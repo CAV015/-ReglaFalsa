@@ -1,0 +1,30 @@
+@startuml Metodo Regla Falsa
+
+class ReglaFalsa {
+    - a: double
+    - b: double
+    - tolerancia: double
+    - xr: double
+    - xa: double
+    + ReglaFalsa(a: double, b: double, tolerancia: double)
+    + tabula(): void
+    + calcularRaiz(): void
+    + f(x: double): double
+    + mostrarTablaEncabezado(): void
+    + mostrarIteracion(a: double, b: double, xr: double, fa: double, fb: double, fc: double, error: double): void
+}
+
+class Main {
+    + ejecutarReglaFalsa(): void
+}
+
+ReglaFalsa "1" --* "1" Main
+
+@enduml
+Este codigo generara un diagrama UML que muestra una relacion de composicion entre la clase ReglaFalsa y la clase Main. La clase ReglaFalsa contiene los atributos privados a, b, tolerancia, xr y xa, asi como los metodos publicos ReglaFalsa, tabula, calcularRaiz, f, mostrarTablaEncabezado y mostrarIteracion. La clase Main tiene el metodo publico ejecutarReglaFalsa.
+
+
+
+
+
+
