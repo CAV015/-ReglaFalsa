@@ -1,4 +1,5 @@
 #include "ReglaFalsa.h"
+#include "colors.h"
 
 ReglaFalsa::ReglaFalsa(double a, double b, double tolerancia)
     : a(a), b(b), tolerancia(tolerancia), xr(0), xa(0)
@@ -10,7 +11,7 @@ void ReglaFalsa::tabula()
     int puntos = INTERVALOS + 1;
     double ancho = (b - a) / INTERVALOS;
 
-    cout << "\n\tx\tf(x) " << endl;
+    cout <<LBLUE<< "\n\tx\tf(x) " << endl;
     for (int i = 0; i < puntos; i++) {
         cout << "\t" << a << "\t" << f(a) << endl;
         a = a + ancho;
@@ -20,7 +21,7 @@ void ReglaFalsa::tabula()
 void ReglaFalsa::calcularRaiz()
 {
     // Selección del intervalo adecuado
-    cout << "\nEscoja el intervalo adecuado" << endl;
+    cout <<WHITE<< "\nEscoja el intervalo adecuado" << endl;
     cout << "\na = ";
     cin >> a;
     cout << "b = ";
@@ -30,7 +31,7 @@ void ReglaFalsa::calcularRaiz()
 
     // Verificar si se puede aplicar el método (que exista un cambio de signo dentro del intervalo de tabulacion)
     if (f(a) * f(b) > 0) {
-        cout << "\nNo se puede aplicar el metodo de la falsa posicion\n";
+        cout <<RED<< "\nNo se puede aplicar el metodo de la falsa posicion\n";
         cout << "porque f(" << a << ") y f(" << b << ") tienen el mismo signo" << endl;
         return;
     }
@@ -46,7 +47,7 @@ void ReglaFalsa::calcularRaiz()
         mostrarIteracion(a, b, xr, f(a), f(b), f(xr), error);
 
         if (fabs(xr - xa) / fabs(xr) <= tolerancia) {
-            cout << "\n\nPara una tolerancia de " << tolerancia << " la raiz de f es: " << xr << endl;
+            cout <<WHITE<< "\n\nPara una tolerancia de " << tolerancia << " la raiz de f es: " <<LBLUE<< xr << endl;
             break;
         }
         else {
@@ -75,5 +76,5 @@ void ReglaFalsa::mostrarTablaEncabezado()
 
 void ReglaFalsa::mostrarIteracion(double a, double b, double xr, double fa, double fb, double fc, double error)
 {
-    cout << right << setw(10) << a << right << setw(20) << fa << right << setw(20) << b << right << setw(25) << fb << right << setw(30) << xr << right << setw(30) << fc << right << setw(35) << error << endl;
+    cout <<LBLUE<< right << setw(10) << a << right << setw(20) << fa << right << setw(20) << b << right << setw(25) << fb << right << setw(30) << xr << right << setw(30) << fc << right << setw(35) << error << endl;
 }

@@ -1,0 +1,15 @@
+@startuml
+entity Funcion {
+  + ID : int
+  nombre : string
+}
+
+entity Raiz {
+  + ID : int
+  valor : double
+  tolerancia : double
+}
+
+Funcion "1" -- "0..*" Raiz
+
+@enduml

@@ -1,4 +1,5 @@
 #include "ReglaFalsa.h"
+#include "colors.h"
 
 void ejecutarReglaFalsa()
 {
