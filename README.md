@@ -37,7 +37,7 @@ El programa utiliza las siguientes bibliotecas estandar de C++:
 + colors
 
 # -Licencia:
-El programa se distribuye bajo la Licencia MIT. Consulta el archivo LICENSE para obtener mas informacion.
+El programa se distribuye bajo la Licencia GNU General Public License v3.0. Consulta el archivo LICENSE para obtener mas informacion.
 
 # -Desarrolladores:
 Cielo Aceves Valtierra 
